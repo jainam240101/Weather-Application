@@ -9,6 +9,8 @@ const view_path=path.join(__dirname,"../templates/views")
 const partials_path=path.join(__dirname,"../templates/partials")
 
 app=express()
+const port=process.env.PORT||3000
+
 app.set('view engine',"hbs")
 hbs.registerPartials(partials_path)
 app.use(express.static(publicDirectoryPath))
@@ -80,6 +82,6 @@ app.get('*',(require,respond)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("Server Started at port 3000")
+app.listen(port,()=>{
+    console.log("Server Started at port "+port)
 })
