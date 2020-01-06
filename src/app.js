@@ -60,10 +60,12 @@ app.get('/test',(require,respond)=>{
                     error:error
                 })
             }
-            var forecast="It is "+forecastdata.summary+" with "+forecastdata.temperature+" degrees  with "+forecastdata.chance_of_rain+"% Chance of rain"
+            var forecast="It is "+forecastdata.summary+"With "+forecastdata.temperature+" degrees. "+forecastdata.chance_of_rain+"% Chance of rain"
+            var temp="Highest Temperature Throughout the day is "+forecastdata.temperature_high+" and the lowest temperature throughout the day is "+forecastdata.temperature_low
             respond.send({
                 place:georesponse.place,
-                forecast:forecast
+                forecast:forecast,
+                second_statement:temp
             })
         })
     })
