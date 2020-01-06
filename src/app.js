@@ -32,7 +32,8 @@ app.get('/help',(require,respond)=>{
 app.get('/about',(require,respond)=>{
     respond.render(view_path+"/about",{
         head:"About me",
-        name:"Jainam Mehta"
+        name:"Jainam Mehta",
+        email:"jainamm47@gmail.com"
     })
 })
 
