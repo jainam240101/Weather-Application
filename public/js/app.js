@@ -5,13 +5,13 @@ const messagtwo=document.querySelector("#message2")
 const messagethree=document.querySelector("#message3")
 
 messageone.textContent=''
-messagtwo.textContent=''
-messagethree.textContent=''
 document.getElementById("submitbtn").addEventListener('click',(e)=>{
     //console.log("Event Started")
     e.preventDefault()
     const location=search.value
     messageone.textContent="Loading..."
+    messagtwo.textContent=''
+    messagethree.textContent=''
     //console.log(location)
     fetch('/test?location='+location).then((response)=>{
         response.json().then((data)=>{
