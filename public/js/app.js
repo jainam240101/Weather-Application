@@ -1,4 +1,4 @@
-const weatherform=document.querySelector('form')
+console.log("Client Script on")
 const search=document.querySelector('input')
 const messageone=document.querySelector("#message1")
 const messagtwo=document.querySelector("#message2")
@@ -7,11 +7,12 @@ const messagethree=document.querySelector("#message3")
 messageone.textContent=''
 messagtwo.textContent=''
 messagethree.textContent=''
-weatherform.addEventListener('submit',(e)=>{
+document.getElementById("submitbtn").addEventListener('click',(e)=>{
+    //console.log("Event Started")
     e.preventDefault()
     const location=search.value
-    messageone.textContent="Loading.."
-
+    messageone.textContent="Loading..."
+    //console.log(location)
     fetch('/test?location='+location).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
@@ -24,5 +25,4 @@ weatherform.addEventListener('submit',(e)=>{
             }
         })
     })
-
 })
